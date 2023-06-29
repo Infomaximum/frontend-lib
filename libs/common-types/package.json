@@ -1,0 +1,13 @@
+{
+  "name": "@infomaximum/global-types",
+  "version": "1.1.2",
+  "license": "Apache-2.0",
+  "main": "./src/index.ts",
+  "types": "./src/index.ts",
+  "scripts": {},
+  "dependencies": {},
+  "devDependencies": {
+    "prettier": "2.8.7",
+    "typescript": "5.0.4"
+  }
+}
