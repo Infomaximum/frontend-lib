@@ -1,0 +1,29 @@
+{
+  "name": "@infomaximum/custom-filter",
+  "version": "1.0.0",
+  "main": "./dist/index.js",
+  "module": "./dist/index.esm.js",
+  "types": "./dist/index.d.ts",
+  "license": "Apache-2.0",
+  "files": [
+    "dist/",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "rollup -c",
+    "release": "tsc --noEmit && standard-version && tsc"
+  },
+  "dependencies": {
+    "@infomaximum/base-filter": "^1.0.0"
+  },
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "25.0.2",
+    "@rollup/plugin-node-resolve": "15.1.0",
+    "@rollup/plugin-typescript": "11.1.1",
+    "prettier": "2.8.7",
+    "rollup": "3.25.3",
+    "standard-version": "9.5.0",
+    "tslib": "^2.4.1",
+    "typescript": "~5.0.4"
+  }
+}

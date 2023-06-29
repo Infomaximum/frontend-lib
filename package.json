@@ -1,0 +1,14 @@
+{
+  "name": "@infomaximum/frontend-lib",
+  "version": "1.0.0",
+  "private": true,
+  "main": "index.js",
+  "license": "Apache-2.0",
+  "scripts": {},
+  "devDependencies": {
+    "lerna": "7.1.0"
+  },
+  "workspaces": [
+    "libs/*"
+  ]
+}
