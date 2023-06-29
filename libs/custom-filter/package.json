@@ -11,7 +11,7 @@
   ],
   "scripts": {
     "build": "rollup -c",
-    "release": "tsc --noEmit && standard-version && tsc"
+    "release": "tsc --noEmit && standard-version && rollup -c"
   },
   "dependencies": {
     "@infomaximum/base-filter": "^1.0.0"
