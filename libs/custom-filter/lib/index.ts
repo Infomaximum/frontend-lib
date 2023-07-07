@@ -22,7 +22,10 @@ export interface ICustomFilterComponentProps<
   mode: EFilteringMethods;
   /** закрытие компонента */
   onCancel(): void;
+   /** значение фильтра */
   filterValue: V;
+   /** язык системы */
+   language: string
 }
 
 export interface ICustomFilter<V extends TFilterValue = TFilterValue> {
