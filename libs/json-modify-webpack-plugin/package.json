@@ -1,0 +1,36 @@
+{
+  "name": "@infomaximum/json-modify-webpack-plugin",
+  "version": "1.0.0",
+  "author": "Infomaximum Frontend Team",
+  "main": "./dist/index.js",
+  "module": "./dist/index.esm.js",
+  "types": "./dist/index.d.ts",
+  "license": "Apache-2.0",
+  "files": [
+    "dist/",
+    "LICENSE"
+  ],
+  "scripts": {
+    "release": "standard-version && rollup -c",
+    "build": "rollup -c"
+  },
+  "dependencies": {
+    "@types/webpack": "^5.28.3",
+    "detect-indent": "^7.0.1",
+    "detect-newline": "^4.0.1",
+    "schema-utils": "^4.2.0",
+    "webpack": "^5.88.2"
+  },
+  "devDependencies": {
+    "@infomaximum/config": "^2.5.3",
+    "@rollup/plugin-commonjs": "25.0.4",
+    "@rollup/plugin-node-resolve": "15.2.1",
+    "@rollup/plugin-typescript": "11.1.4",
+    "prettier": "3.0.3",
+    "rollup": "3.29.4",
+    "rollup-plugin-delete": "2.0.0",
+    "standard-version": "9.5.0",
+    "tslib": "^2.6.2",
+    "typescript": "5.2.2"
+  }
+}
