@@ -38,5 +38,10 @@
     "manifest",
     "modify",
     "json"
-  ]
+  ],
+  "homepage": "https://github.com/Infomaximum/frontend-lib/tree/master/libs/json-modify-webpack-plugin",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Infomaximum/frontend-lib/tree/master/libs/json-modify-webpack-plugin"
+  }
 }
