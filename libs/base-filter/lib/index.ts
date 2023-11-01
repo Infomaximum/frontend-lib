@@ -5,6 +5,14 @@ export enum EFilteringMethods {
   editing = "editing",
 }
 
+/** Значения, которые может принимать дополнительный селектор параметров фильтра */
+export enum EFilteringMethodValues {
+  INCLUDE = "INCLUDE", // Выбрано
+  EXCLUDE = "EXCLUDE", // Исключено
+  NONEMPTY = "NONEMPTY", //Не пустое значение
+  EMPTY = "EMPTY", //Пустое значение
+}
+
 /** Тип значения фильтра */
 export type TFilterValue = any;
 
