@@ -5,7 +5,7 @@ import type { Compiler } from "webpack";
 export type JsonModifyWebpackPluginOptions = {
   matchers: {
     matcher: RegExp;
-    action: (json: Record<string, number | string>) => Record<string, number | string>;
+    action: (json: Record<string, any>) => Record<string, any>;
   }[];
 };
 
