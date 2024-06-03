@@ -67,4 +67,6 @@ export interface IBaseFilter<
   ): React.ReactNode;
 
   isShowInAddFilterList(): boolean;
+
+  getIcon?(): React.ReactElement | null;
 }
