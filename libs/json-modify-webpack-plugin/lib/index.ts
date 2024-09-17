@@ -5,7 +5,7 @@ import type { Compiler } from "webpack";
 export type JsonModifyWebpackPluginOptions = {
   matchers: {
     matcher: RegExp;
-    action: (json: Record<string, any>) => Record<string, any>;
+    action: (json: Record<string, any>, assetNames: string[]) => Record<string, any>;
   }[];
 };
 
@@ -79,6 +79,8 @@ class JsonModifyWebpackPlugin {
           const detectIndent = (await import("detect-indent")).default;
           const { detectNewline } = await import("detect-newline");
 
+          const assetNames = Object.keys(assets);
+
           for (const assetKey in assets) {
             const asset = assets[assetKey];
 
@@ -92,7 +94,7 @@ class JsonModifyWebpackPlugin {
 
                 const json = JSON.parse(source);
 
-                const newContent = stringify(matcher.action(json), indent, newline);
+                const newContent = stringify(matcher.action(json, assetNames), indent, newline);
 
                 compilation.updateAsset(assetKey, new RawSource(newContent));
               });
