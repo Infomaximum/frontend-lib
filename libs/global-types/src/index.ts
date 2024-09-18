@@ -17,6 +17,12 @@ declare module "*.svg?url" {
   export default srcSvgUrl;
 }
 
+/** Импортировать исходный код svg */
+declare module "*.svg?src" {
+  const srcSvgHtml: string;
+  export default srcSvgHtml;
+}
+
 /** Импортировать svg как компонент реакта */
 declare module "*.svg" {
   const srcSvg: React.FC<React.SVGAttributes<SVGElement>>;
