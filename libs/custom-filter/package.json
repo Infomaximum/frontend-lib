@@ -14,7 +14,7 @@
     "release": "tsc --noEmit && standard-version && rollup -c"
   },
   "dependencies": {
-    "@infomaximum/base-filter": "^1.0.0"
+    "@infomaximum/base-filter": "^2.0.0"
   },
   "devDependencies": {
     "@rollup/plugin-commonjs": "25.0.2",
