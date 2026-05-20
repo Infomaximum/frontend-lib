@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.1.1](https://github.com/Infomaximum/frontend-lib/compare/v2.0.0...v1.1.1) (2026-05-20)
+
+
+### Bug Fixes
+
+* обновлена зависимость "@infomaximum/base-filter" до версии 2.0.0 ([84e8efd](https://github.com/Infomaximum/frontend-lib/commit/84e8efd287cfd823deaa6a825ee367cbb34fbded))
+
 ## 1.1.0 (2023-07-07)
 
 
