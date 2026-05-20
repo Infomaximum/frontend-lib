@@ -1,5 +1,3 @@
-import type { Localization } from "@infomaximum/localization";
-
 export enum EFilteringMethods {
   adding = "adding",
   editing = "editing",
@@ -35,13 +33,15 @@ export type TBaseFilterComponentProps = {
   mode: EFilteringMethods;
 };
 
+export type TLocGetter = (...args: any[]) => any;
+
 export interface IBaseFilter<
   IAddFilterComponentProps extends TBaseFilterComponentProps = TBaseFilterComponentProps,
   IEditFilterComponentProps extends TBaseFilterComponentProps = TBaseFilterComponentProps,
-  FilterValue = any
+  FilterValue = any,
 > {
   getTypename(): string;
-  getCaption(localization: Localization, filterValue?: FilterValue): string;
+  getCaption(locGetter: TLocGetter, filterValue?: FilterValue): string;
 
   /**
    * true, если фильтр имеет одиночный тип (т.е. заменяет аналогичный фильтр,
@@ -54,7 +54,7 @@ export interface IBaseFilter<
     | React.ComponentType<IAddFilterComponentProps>
     | undefined;
   getEditFilterComponent(
-    filterValue: FilterValue
+    filterValue: FilterValue,
   ): React.ComponentType<IEditFilterComponentProps> | undefined;
   prepareValueForServer(filterValue: TFilterValue): TPreparedFilterValue;
   getQueryParamName(filterValue: FilterValue): string;
@@ -63,7 +63,7 @@ export interface IBaseFilter<
 
   getFilterSpoilerContent(
     filterValue: FilterValue,
-    localization: Localization
+    locGetter: TLocGetter,
   ): React.ReactNode;
 
   isShowInAddFilterList(): boolean;

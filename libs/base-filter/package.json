@@ -14,8 +14,7 @@
     "release": "tsc --noEmit && standard-version && rollup -c"
   },
   "dependencies": {
-    "@types/react": "^18.0.0",
-    "@infomaximum/localization": "^1.0.4"
+    "@types/react": "^18.0.0"
   },
   "devDependencies": {
     "@rollup/plugin-commonjs": "25.0.2",
