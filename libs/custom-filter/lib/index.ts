@@ -9,9 +9,7 @@ import type {
 export * from "@infomaximum/base-filter";
 
 /** Свойства компонента фильтра */
-export interface ICustomFilterComponentProps<
-  V extends TFilterValue = TFilterValue
-> {
+export interface ICustomFilterComponentProps<V extends TFilterValue = TFilterValue> {
   /** колбек добавления фильтра */
   addFilter(value: V): void;
   /** колбек редактирования фильтра */
@@ -22,10 +20,10 @@ export interface ICustomFilterComponentProps<
   mode: EFilteringMethods;
   /** закрытие компонента */
   onCancel(): void;
-   /** значение фильтра */
+  /** значение фильтра */
   filterValue: V;
-   /** язык системы */
-   language: string
+  /** язык системы */
+  language: string;
 }
 
 export interface ICustomFilter<V extends TFilterValue = TFilterValue> {

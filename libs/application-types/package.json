@@ -8,8 +8,8 @@
     "release": "tsc --noEmit && standard-version"
   },
   "dependencies": {
-    "@infomaximum/global-types": "^1.2.0",
-    "@infomaximum/custom-filter": "^1.0.0"
+    "@infomaximum/custom-filter": "^1.0.0",
+    "@infomaximum/global-types": "^1.2.0"
   },
   "devDependencies": {
     "prettier": "2.8.7",

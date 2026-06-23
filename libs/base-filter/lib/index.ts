@@ -50,21 +50,16 @@ export interface IBaseFilter<
    */
   isSingle: boolean;
 
-  getAddFilterComponent():
-    | React.ComponentType<IAddFilterComponentProps>
-    | undefined;
+  getAddFilterComponent(): React.ComponentType<IAddFilterComponentProps> | undefined;
   getEditFilterComponent(
-    filterValue: FilterValue,
+    filterValue: FilterValue
   ): React.ComponentType<IEditFilterComponentProps> | undefined;
   prepareValueForServer(filterValue: TFilterValue): TPreparedFilterValue;
   getQueryParamName(filterValue: FilterValue): string;
 
   getFilterForPersist(state: TFilterState): TFilterPersistValue;
 
-  getFilterSpoilerContent(
-    filterValue: FilterValue,
-    locGetter: TLocGetter,
-  ): React.ReactNode;
+  getFilterSpoilerContent(filterValue: FilterValue, locGetter: TLocGetter): React.ReactNode;
 
   isShowInAddFilterList(): boolean;
 

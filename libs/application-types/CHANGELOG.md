@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [Unreleased]
+
+### Features
+
+- контекст привязанного пространства (`workspaceContext`) и типы API ресурсов [MS-932]
+
 ## 1.2.0
 
 
