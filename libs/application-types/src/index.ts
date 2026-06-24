@@ -1,6 +1,9 @@
 /// <reference types="@infomaximum/global-types" />
 
 import { type TFilterDescriptions } from "@infomaximum/custom-filter";
+import { type IWorkspaceContext } from "./workspaceContext";
+
+export * from "./workspaceContext";
 
 /**
  * API роутинга кастомного приложения. Приложение управляет своим роутом через
@@ -57,74 +60,6 @@ export interface IApplicationWithFilters extends IApplication {
 
 export interface IApplicationClass {
   new (): IApplication;
-}
-
-/** Параметры постраничной выборки ресурса. */
-export interface IWorkspaceResourcePaging {
-  limit?: number;
-  offset?: number;
-}
-
-/** Таблица пространства (элемент списка). */
-export interface ITableInfo {
-  name: string;
-  involved: boolean;
-}
-export interface ITablesApi {
-  list(params?: { textFilter?: string; paging?: IWorkspaceResourcePaging }): Promise<ITableInfo[]>;
-}
-
-/** Скрипт пространства (элемент списка). */
-export interface IScriptInfo {
-  id: number;
-  name: string;
-}
-export interface IScriptsApi {
-  list(params?: { paging?: IWorkspaceResourcePaging }): Promise<IScriptInfo[]>;
-}
-
-/** Подключение пространства (элемент списка). */
-export interface IConnectionInfo {
-  id: number;
-  name: string;
-  type: string;
-}
-export interface IConnectionsApi {
-  list(): Promise<IConnectionInfo[]>;
-}
-
-/** Интеграция пространства (элемент списка). */
-export interface IIntegrationInfo {
-  id: number;
-  name: string;
-  guid: string;
-}
-export interface IIntegrationsApi {
-  list(): Promise<IIntegrationInfo[]>;
-}
-
-/**
- * API доступа к ресурсам пространства. Группа присутствует только если её
- * модуль-владелец зарегистрировал фабрику. Контракт вводится инкрементально —
- * методы добавляются вместе с реализующими их фабриками (полная целевая
- * поверхность — в дизайн-спеке). Сейчас реализуются list-операции 4 ресурсов;
- * fileStorage, tables.getData, scripts.run/getStatus — следующие фазы (бэк-схема).
- */
-export interface IWorkspaceResources {
-  tables?: ITablesApi;
-  scripts?: IScriptsApi;
-  connections?: IConnectionsApi;
-  integrations?: IIntegrationsApi;
-}
-
-/** Контекст привязанного к приложению пространства. */
-export interface IWorkspaceContext {
-  /** GUID привязанного пространства. */
-  workspaceGuid: number;
-  /** false → привязка разорвана / пространство в корзине / нет прав. */
-  isAvailable: boolean;
-  /** API доступа к ресурсам пространства. */
-  resources: IWorkspaceResources;
 }
 
 declare global {
