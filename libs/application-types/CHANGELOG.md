@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.3.0-rc.2](https://github.com/Infomaximum/frontend-lib/compare/v1.3.0-rc.1...v1.3.0-rc.2) (2026-06-24)
+
+
+### Features
+
+* расширение контракта ресурсов пространства (таблицы/скрипты/интеграции) ([cc836f0](https://github.com/Infomaximum/frontend-lib/commit/cc836f0062440de135729e32338cc9aafc3c9d30))
+
 ## [1.3.0-rc.1](https://github.com/Infomaximum/frontend-lib/compare/v1.3.0-rc.0...v1.3.0-rc.1) (2026-06-24)
 
 
