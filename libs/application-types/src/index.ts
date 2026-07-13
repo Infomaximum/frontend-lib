@@ -37,8 +37,10 @@ export interface IApplicationRouteApi {
  * системы (в текущей версии платформы вернётся `csrf_invalid`).
  *
  * Ошибки бэкенда нормализованы (`{ code, params, message }`); ошибки канала
- * кодированы (`invalid_query`, `unsupported_operation`); отмена при закрытии
- * приложения — `RequestCancelledError`.
+ * кодированы (`invalid_query`, `unsupported_operation`).
+ *
+ * Платформа запросы не отменяет: mutation'ы должны доезжать, а lifecycle
+ * read-запросов — забота приложения (запросы работают как fire-and-forget).
  */
 export type TApplicationGraphqlRequester = <
   TData = unknown,
