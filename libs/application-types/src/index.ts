@@ -25,6 +25,29 @@ export interface IApplicationRouteApi {
   navigateApp: (subPath: string, options?: { replace?: boolean }) => void;
 }
 
+/**
+ * Функция запросов к GraphQL API системы от имени приложения.
+ *
+ * Единственный поддерживаемый транспорт к системе: платформа исполняет запрос
+ * в своём realm'е и берёт на себя авторизацию, служебные заголовки, ротацию
+ * сессии и разбор ошибок. Приложение передаёт запрос строкой; тип операции
+ * (query/mutation) определяется автоматически, подписки не поддерживаются.
+ *
+ * Не делай собственный `fetch` к GraphQL-эндпоинту — он не пройдёт авторизацию
+ * системы (в текущей версии платформы вернётся `csrf_invalid`).
+ *
+ * Ошибки бэкенда нормализованы (`{ code, params, message }`); ошибки канала
+ * кодированы (`invalid_query`, `unsupported_operation`); отмена при закрытии
+ * приложения — `RequestCancelledError`.
+ */
+export type TApplicationGraphqlRequester = <
+  TData = unknown,
+  TVariables extends Record<string, unknown> = Record<string, unknown>,
+>(
+  query: string,
+  variables?: TVariables
+) => Promise<TData>;
+
 /** Пропсы, которые платформа передаёт в `mount`/`update` кастомного приложения. */
 export interface IApplicationProps {
   /** Имя приложения (может отсутствовать до загрузки модели). */
@@ -41,6 +64,11 @@ export interface IApplicationProps {
   appRouter: IApplicationRouteApi;
   /** Контекст привязанного пространства. undefined → приложение ни к чему не привязано. */
   workspaceContext?: IWorkspaceContext;
+  /**
+   * Функция запросов к GraphQL API системы. Опциональна: старые версии
+   * платформы поле не передают — перед использованием проверяйте наличие.
+   */
+  graphql?: TApplicationGraphqlRequester;
 }
 
 export interface IApplication {
