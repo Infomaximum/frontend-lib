@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.6.0](https://github.com/Infomaximum/frontend-lib/compare/v1.5.0...v1.6.0) (2026-08-10)
+
+
+### Features
+
+* сделать поле user в IApplicationProps опциональным ([03ed43a](https://github.com/Infomaximum/frontend-lib/commit/03ed43af77d10f3e7d9964b659dad68b86e39c48))
+
 ## [1.5.0](https://github.com/Infomaximum/frontend-lib/compare/v1.4.0...v1.5.0) (2026-08-10)
 
 
