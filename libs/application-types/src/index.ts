@@ -93,7 +93,7 @@ export interface IApplicationProps {
    */
   graphql?: TApplicationGraphqlRequester;
 
-  user: IApplicationUser;
+  user?: IApplicationUser;
 }
 
 export interface IApplication {
