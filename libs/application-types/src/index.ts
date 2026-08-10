@@ -47,8 +47,29 @@ export type TApplicationGraphqlRequester = <
   TVariables extends Record<string, unknown> = Record<string, unknown>,
 >(
   query: string,
-  variables?: TVariables
+  variables?: TVariables,
 ) => Promise<TData>;
+
+/**
+ * Информация о текущем пользователе
+ *
+ * Поля кроме `id` опциональны: сервер может не отдать часть данных профиля
+ * (нет прав на поле, поле не заполнено) — приложение должно быть к этому готово.
+ */
+export interface IApplicationUser {
+  /** Идентификатор сотрудника. */
+  id: number;
+  /** Электронная почта. */
+  email?: string;
+  /** Отображаемое имя ("Фамилия Имя Отчество"). */
+  displayName?: string;
+  /** Имя. */
+  firstName?: string;
+  /** Фамилия. */
+  secondName?: string;
+  /** Отчество. */
+  patronymic?: string;
+}
 
 /** Пропсы, которые платформа передаёт в `mount`/`update` кастомного приложения. */
 export interface IApplicationProps {
@@ -71,6 +92,8 @@ export interface IApplicationProps {
    * платформы поле не передают — перед использованием проверяйте наличие.
    */
   graphql?: TApplicationGraphqlRequester;
+
+  user: IApplicationUser;
 }
 
 export interface IApplication {
